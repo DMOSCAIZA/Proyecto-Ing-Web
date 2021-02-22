@@ -1,0 +1,25 @@
+.DS_Store
+Frontend-Vue/node_modules
+Frontend-Vue/dist
+Frontend-Vue/package-lock.json
+
+Frontend-Vue/tests/e2e/videos/
+Frontend-Vue/tests/e2e/screenshots/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
