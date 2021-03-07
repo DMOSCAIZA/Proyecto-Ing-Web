@@ -26,8 +26,8 @@
   </v-layout>
 </template>
 <script>
-import axios from 'axios'
-export default {
+  import axios from 'axios'
+  export default {
   data(){
     return {
       email: '',
