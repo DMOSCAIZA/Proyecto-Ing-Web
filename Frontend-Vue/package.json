@@ -1,10 +1,6 @@
 {
-
   "name": "heladeria",
   "version": "0.1.0",
-  "engines": {
-    "node": "12.18.1"
-  },
   "private": true,
   "description": "spa-heladeria",
   "scripts": {
