@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+//Login//
+import Login from '../components/Login.vue'
+
 //Producto//
 import Categoria from '../components/Ventas/Categoria.vue'
 import Producto from '../components/Ventas/Producto.vue'
@@ -29,6 +32,11 @@ Vue.use(VueRouter)
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
 
     //Producto//
