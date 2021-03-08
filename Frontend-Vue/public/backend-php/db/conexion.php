@@ -1,5 +1,5 @@
 <?php
-include "datosConexion.php";
+include ('../db/datosConexion.php');
   function Conectar($db)
   {
       try {
