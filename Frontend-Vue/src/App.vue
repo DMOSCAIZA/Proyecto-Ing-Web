@@ -9,6 +9,7 @@
     <v-navigation-drawer
       app
       dark
+      fixed-tabs
       absolute
       permanent
       v-model="drawer"
@@ -209,10 +210,13 @@
         app
         color="red lighten-1"
         dark
+        absolute
+        fixed
       >
       <v-app-bar-nav-icon
-        @click="drawer = !drawer"
+
         @click.stop="mini = !mini"
+        @click="drawer = !drawer"
         >
       </v-app-bar-nav-icon>
 
@@ -220,8 +224,7 @@
         style="width: 400px"
         class="ml-0 pl-4"
       >
-        <span class="hidden-sm-and-down">Single Page Application (Venta Helados)</span>
-        <!--Single Page Application (Venta Helados)-->
+        <span class="hidden-sm-and-down">SPA Heladería Hnos Guzmán</span>
       </v-toolbar-title>
         <v-spacer></v-spacer>
       <v-btn icon>
