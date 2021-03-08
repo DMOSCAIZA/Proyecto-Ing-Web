@@ -9,6 +9,7 @@
     <v-navigation-drawer
       app
       dark
+      fixed-tabs
       absolute
       permanent
       v-model="drawer"
@@ -209,10 +210,13 @@
         app
         color="red lighten-1"
         dark
+        absolute
+        fixed
       >
       <v-app-bar-nav-icon
-        @click="drawer = !drawer"
+
         @click.stop="mini = !mini"
+        @click="drawer = !drawer"
         >
       </v-app-bar-nav-icon>
 

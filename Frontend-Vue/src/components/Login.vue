@@ -8,10 +8,8 @@
           </v-toolbar-title>
         </v-toolbar>
         <v-card-text>
-          <v-text-field v-model="email" autofocus color="accent" label="Email" required>
-          </v-text-field>
-          <v-text-field v-model="password" type="password" color="accent" label="Password" required>
-          </v-text-field>
+          <v-text-field v-model="email" autofocus color="accent" label="Email" required></v-text-field>
+          <v-text-field v-model="password_hash" type="password" color="accent" label="Password" required></v-text-field>
           <v-flex class="red--text" v-if="error">
             {{error}}
           </v-flex>
@@ -28,17 +26,15 @@
 <script>
   import axios from 'axios'
   export default {
-  data(){
-    return {
-      email: '',
-      password: '',
-      error: null
-    }
-  },
+  data: () => ({
+    email: '',
+    password_hash: '',
+    error: null
+  }),
   methods :{
     ingresar(){
       this.error=null;
-      axios.post('api/Usuarios/Login', {email: this.email, password: this.password})
+      axios.post('api/login/Login', {email: this.email, password: this.password_hash})
       .then(respuesta => {
         return respuesta.data
       })

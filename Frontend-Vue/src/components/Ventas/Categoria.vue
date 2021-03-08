@@ -196,7 +196,7 @@
     methods:{
       listar(){
         let me =this;
-        axios.get('api/categoria.php').then(function(response){
+        axios.get('api/Categoria.php').then(function(response){
           me.categorias=response.data;
         }).catch(function(error){
             console.log(error);
