@@ -7,8 +7,7 @@ import axios from 'axios';
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL='http://localhost/1-PROYECTOS/Proyecto-Ing-WEB/Backend-PHP/',
-//api/categoria.php
+axios.defaults.baseURL='';
 
 new Vue({
   router,
