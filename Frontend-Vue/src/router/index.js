@@ -2,8 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-
+//Home//
 import Home from '../views/Home.vue'
+
+//Login//
+
 
 //Producto//
 import Categoria from '../components/Ventas/Categoria.vue'

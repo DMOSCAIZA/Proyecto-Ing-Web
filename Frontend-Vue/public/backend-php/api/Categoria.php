@@ -1,5 +1,5 @@
 <?php
-include "db/parametros.php";
+include ('db/parametros.php');
 
 function permisos() {  
   if (isset($_SERVER['HTTP_ORIGIN'],)){
