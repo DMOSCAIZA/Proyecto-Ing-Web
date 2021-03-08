@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-//Login//
-import Login from '../components/Login.vue'
+/*Login
+import Login from '../components/Login.vue'*/
 
 //Home//
 import Home from '../views/Home.vue'

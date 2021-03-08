@@ -210,11 +210,12 @@
           loader: null,
           loading: false,
             headers: [
-                //{ text: 'Id Producto', value: 'idProd' },
-                //{ text: 'Id Categoria', value: 'idCat', sortable: false },
-                { text: 'Nombre Producto', value: 'nombre_prod' },
-                { text: 'Nombre Categoria', value: 'nombre_cat' },
-                { text: 'Precio', value: 'precio_prod' },
+                { text: 'Id Producto', value: 'idproducto' },
+                //{ text: 'Id Categoria', value: 'idcategoria', sortable: false },
+                { text: 'Código', value: 'codigo' },
+                { text: 'Nombre Producto', value: 'nombre' },
+                //{ text: 'Nombre Categoria', value: 'nombre_cat' },
+                { text: 'Precio', value: 'precio_venta' },
                 { text: 'Stock', value: 'stock', sortable: false},
                 { text: 'Estado', value: 'condicion_prod'},
                 { text: 'Opciones', value: 'opciones', sortable: false}
@@ -222,13 +223,14 @@
 
             search: '',
             editedIndex: -1,
-            idProd: '',
-            nombre_prod: '',
-            idCat: '',
-            nombre_cat: '',
-            precio_producto: '',
-            cantidad: '',
-            condicion_producto: '',
+            idproducto: '',
+            codigo: '',
+            nombre: '',
+            idcategoria: '',
+            //nombre_cat: '',
+            precio_venta: '',
+            stock: '',
+            condicion_prod: '',
             valida: 0,
             validaMensaje:[],
             adModal: 0,
@@ -262,7 +264,7 @@
         methods:{
             listar(){
               let me =this;
-              axios.get('api/Productos/Listar').then(function(response){
+              axios.get('api/Producto.php').then(function(response){
                 //  console.log(response);
                 me.productos=response.data;
               }).catch(function(error){
