@@ -20,16 +20,16 @@
 
   $conexion =  Conectar($db);
   if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-      if (isset($_GET['idcategoria'])) {
-        $sql = $conexion->prepare("SELECT * FROM categoria where idcategoria=:idcategoria");
-        $sql->bindValue(':idcategoria', $_GET['idcategoria']);
+      if (isset($_GET['idproducto'])) {
+        $sql = $conexion->prepare("SELECT * FROM producto where idproducto=:idproducto");
+        $sql->bindValue(':idproducto', $_GET['idproducto']);
         $sql->execute();
         header("HTTP/1.1 200 OK");
         echo json_encode($sql->fetch(PDO::FETCH_ASSOC));
         exit();
       }
       else{
-        $sql = $conexion->prepare("SELECT * FROM categoria");
+        $sql = $conexion->prepare("SELECT * FROM producto");
         $sql->execute();
         $sql->setFetchMode(PDO::FETCH_ASSOC);
         header("HTTP/1.1 200 OK");
@@ -39,13 +39,13 @@
   }
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       $input = $_POST;
-      $sql = "INSERT INTO categoria (nombre, descripcion, condicion) VALUES (:nombre, :descripcion, :condicion)";
+      $sql = "INSERT INTO producto (idcategoria, codigo, nombre, precio_venta, stock, descripcion, condicion) VALUES (:idcategoria, :codigo, :nombre, :precio_venta, :stock, :descripcion, :condicion)";
       $resultado = $conexion->prepare($sql);
       bindAllValues($resultado, $input);
       $resultado->execute();
       $id = $conexion->lastInsertId();
       if($id){
-        $input['idcategoria '] = $id;
+        $input['idproducto'] = $id;
         header("HTTP/1.1 200 OK");
         echo json_encode($input);
         exit();
@@ -53,9 +53,9 @@
   }
   if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
       $input = $_GET;
-      $id = $input['idcategoria '];
+      $id = $input['idproducto'];
       $campos = getParams($input);
-      $sql = "UPDATE categoria SET $campos WHERE idcategoria ='$id'";
+      $sql = "UPDATE producto SET $campos WHERE idproducto ='$id'";
       $resultado = $conexion->prepare($sql);
       bindAllValues($resultado, $input);
       $resultado->execute();
@@ -63,9 +63,9 @@
       exit();
   }
   if ($_SERVER['REQUEST_METHOD'] == 'DELETE'){
-    $id = $_GET['idcategoria'];
-    $resultado = $conexion->prepare("DELETE FROM categoria where idcategoria=:idcategoria");
-    $resultado->bindValue(':idcategoria', $id);
+    $id = $_GET['idproducto'];
+    $resultado = $conexion->prepare("DELETE FROM producto where idproducto=:idproducto");
+    $resultado->bindValue(':idproducto', $id);
     $resultado->execute();
     header("HTTP/1.1 200 OK");
     exit();
